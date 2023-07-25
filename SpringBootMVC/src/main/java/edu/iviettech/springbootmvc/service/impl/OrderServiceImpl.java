@@ -36,7 +36,6 @@ public class OrderServiceImpl implements OrderService {
                                                                     .toList();
 
         listDetailEntities.stream().forEach(detail->{
-            detail.setOrder(newOrder);
             orderDetailRepository.save(detail);
         });
     }

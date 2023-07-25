@@ -11,6 +11,15 @@ public class ProductConverter {
         entity.setUnitPrice(product.getUnitPrice());
         return entity;
     }
+
+    public static ProductEntity transferToEntityForOrderDetail(Product product){
+        ProductEntity entity = new ProductEntity();
+        entity.setId(product.getId());
+        entity.setName(product.getName());
+        entity.setDescription(product.getDescription());
+        entity.setUnitPrice(product.getUnitPrice());
+        return entity;
+    }
     public static Product transferToModel(ProductEntity productEntity){
         Product model = new Product();
         model.setId(productEntity.getId());

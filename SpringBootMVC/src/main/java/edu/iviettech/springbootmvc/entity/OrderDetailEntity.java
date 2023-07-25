@@ -14,7 +14,7 @@ public class OrderDetailEntity {
     @ManyToOne
     @JoinColumn(name = "order_entity_id")
     OrderEntity order;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_entity_id")
     ProductEntity product;
     private Integer quantity;
