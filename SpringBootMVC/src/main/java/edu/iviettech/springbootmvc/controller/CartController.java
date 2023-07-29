@@ -15,13 +15,15 @@ import java.util.List;
 @Controller
 @RequestMapping("shoppingCart")
 public class CartController {
+    private final CartService cartService;
+    private final OrderService orderService;
+    private final ProductService productService;
     @Autowired
-    private CartService cartService;
-
-    @Autowired
-    private OrderService orderService;
-    @Autowired
-    private ProductService productService;
+    public CartController(CartService cartService, OrderService orderService, ProductService productService) {
+        this.cartService = cartService;
+        this.orderService = orderService;
+        this.productService = productService;
+    }
 
     @GetMapping("addToCart/{productId}")
     public String addToCart(@PathVariable("productId") Long productId){

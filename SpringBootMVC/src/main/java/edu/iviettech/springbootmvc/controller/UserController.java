@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("users")
 public class UserController {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @GetMapping("addNewUser")
         public String addNewUser(@ModelAttribute User user, Model model){
